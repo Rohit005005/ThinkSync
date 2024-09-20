@@ -1,11 +1,16 @@
 import EmojiPicker from "emoji-picker-react";
-import React from "react";
+import React, { useState } from "react";
 
-function EmojiPickerComponent() {
+function EmojiPickerComponent({ children }) {
+  const [openEmojiPicker, setopenEmojiPicker] = useState(false)
   return (
     <div>
-      <div></div>
-      <EmojiPicker />
+      <div>
+        {children}
+      </div>
+      {openEmojiPicker &&
+        <div><EmojiPicker /></div>}
+
     </div>
   );
 }
